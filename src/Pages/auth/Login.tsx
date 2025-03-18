@@ -1,9 +1,11 @@
+import { Box, Text } from "@chakra-ui/react";
+
 const Login = () => {
-    return (
-        <div>
-            <h1>Login</h1>
-        </div>
-    );
-}
+  return (
+    <Box bg="blue.500" p={4}>
+        <Text>Login</Text>
+    </Box>
+  );
+};
 
 export default Login;

@@ -1,8 +1,10 @@
+import { Box, Text } from "@chakra-ui/react";
+
 const Welcome = () => {
     return (
-        <div>
-          <h1>Bem-vindo ao seu projeto React com TypeScript!</h1>
-        </div>
+      <Box>
+        <Text>Bem-vindo ao seu projeto React com TypeScript!</Text>
+      </Box>
       );
 }
 

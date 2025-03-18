@@ -1,35 +1,37 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 
-import Welcome from "./Pages/auth/Welcome"
-import Login from './Pages/auth/Login';
-import Register from './Pages/auth/Register';
-import AppHome from './Pages/AppHome';
+import Welcome from "./Pages/auth/Welcome";
+import Login from "./Pages/auth/Login";
+import Register from "./Pages/auth/Register";
+import AppHome from "./Pages/AppHome";
+import { defaultSystem } from "@chakra-ui/react"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Welcome/>
+    element: <Welcome />,
   },
   {
     path: "/login",
-    element: <Login/>
+    element: <Login />,
   },
   {
     path: "/register",
-    element: <Register/>
+    element: <Register />,
   },
   {
     path: "/home",
-    element: <AppHome/>
-  }
-])
-
-//Componente responsavel pela criação das rotas do app, utilizamos a biblioteca "react-router-dom"
+    element: <AppHome />,
+  },
+]);
 
 const App: React.FC = () => {
   return (
-    <RouterProvider router={router}/>
+      <ChakraProvider value={defaultSystem}>
+        <RouterProvider router={router} />
+      </ChakraProvider>
   );
 };
 
