@@ -1,15 +1,26 @@
 import { Box, Flex, Input, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import ImagemDeFundo from "../../imgs/background/auth.png"
+import CustomButton from "../../components/button";
 
 
 const inputs: React.CSSProperties = {
     borderRadius: "20px",
-  }
+}
 
 
 
 const Register = () => {
     return (
-        <Box>
+        <Box
+            bgImage={`url(${ImagemDeFundo})`}
+            bgSize={"cover"}
+            backgroundPosition={"center"}
+            bgRepeat={"no-repeat"}
+            height={"100vh"}
+            width={"100%"}
+        >
+
             <Flex flexDir={"column"} textAlign={"center"} marginTop={35}>
                 <Text>Criar Conta</Text>
                 <Text>Preencha os dados abaixo para criar sua conta na plataforma</Text>
@@ -48,6 +59,13 @@ const Register = () => {
                     </Flex>
 
                 </Box>
+
+            </Flex>
+
+            <Flex justifyContent={"center"} marginTop={5}>
+                <CustomButton
+                    label="Confirmar"
+                />
             </Flex>
 
         </Box>
