@@ -3,6 +3,7 @@ import Logo from "../../imgs/logo.png";
 import IconeCarga from "../../imgs/icons/caixa-carga.png"
 import IconeMotorista from "../../imgs/icons/carteira-motorista.png"
 import IconeRelatorio from "../../imgs/icons/relatorio.png"
+import ImagemDeFundo from "../../imgs/background/welcome.png"
 import { useNavigate } from "react-router-dom";
 
 const cardInfo: React.CSSProperties = {
@@ -25,7 +26,14 @@ const Welcome = () => {
   const navigate = useNavigate();
 
   return (
-    <Box>
+    <Box 
+    bgImage={`url(${ImagemDeFundo})`} 
+    bgSize={"cover"}
+    backgroundPosition={"center"}
+    bgRepeat={"no-repeat"}
+    height={"107vh"}
+    width={"100%"}
+    >
       <Flex justifyContent={"center"}>
         <Image src={Logo} />
       </Flex>
