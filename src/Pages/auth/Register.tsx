@@ -45,7 +45,7 @@ const Register = () => {
         src={buttonReturn}
         alt="Botão de voltar"
         onClick={() => navigate("/")}
-        width={"3%"}
+        width={"50px"}
         padding={2}
         position={"relative"}
       />

@@ -12,9 +12,10 @@ const cardInfo: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   textAlign: "center",
-  backgroundColor: "rgba(190, 190, 190, 0.7)",
+  backgroundColor: "rgba(199, 199, 199, 0.8)",
   borderRadius: "15px",
   padding: "30px",
+  boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)"
 };
 
 const buttons: React.CSSProperties = {
@@ -35,7 +36,7 @@ const Welcome = () => {
         bgRepeat={"no-repeat"}
         height={"100vh"}
         width={"100%"}
-        opacity={"20%"}
+        opacity={"26%"}
       />
       <Flex justifyContent={"center"}>
         <Image src={Logo} width={"300px"} />
