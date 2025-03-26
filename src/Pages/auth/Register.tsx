@@ -1,21 +1,32 @@
-import { Box, Flex, Input, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Input, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import ImagemDeFundo from "../../imgs/background/auth.png";
 import CustomButton from "../../components/button";
+import buttonReturn from "../../imgs/icons/voltar.png";
 
 const inputs: React.CSSProperties = {
   borderRadius: "15px",
   backgroundColor: "white",
   fontSize: "16px",
+  font: "Arial",
+  color: "rgba(199, 199, 199, 0.8)",
+  boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
 };
 
 const textInfoInput: React.CSSProperties = {
-  fontSize: "16px",
+  fontSize: "17px",
+  font: "Arial",
+  fontWeight: "bold",
+  color: "rgb(94, 91, 91)",
 };
 
 const Register = () => {
 
     const navigate = useNavigate();
+
+    const handlogin = () => {
+      navigate("/login")
+    }
 
   return (
     <Box>
@@ -25,10 +36,19 @@ const Register = () => {
         bgSize={"cover"}
         backgroundPosition={"center"}
         bgRepeat={"no-repeat"}
-        opacity={"40%"}
+        opacity={"26%"}
         height={"100vh"}
         width={"100%"}
         />
+
+      <Image
+        src={buttonReturn}
+        alt="Botão de voltar"
+        onClick={() => navigate("/")}
+        width={"3%"}
+        padding={2}
+        position={"relative"}
+      />
 
       <Flex flexDir={"column"} textAlign={"center"}>
         <Text fontSize={24} fontWeight={"bold"}>
@@ -41,11 +61,12 @@ const Register = () => {
 
       <Flex justifyContent={"center"} alignItems={"center"} >
         <Box
-            position={"relative"}
-          backgroundColor={"rgba(187, 187, 187, 0.75)"}
+          position={"relative"}
+          backgroundColor={"rgba(199, 199, 199, 0.8)"}
           padding={"20px"}
           width={"480px"}
           borderRadius={25}
+          boxShadow={"5px 5px 15px rgba(0, 0, 0, 0.3)"}
         >
           <Flex flexDir={"column"} gap={8}>
             <Box>
@@ -96,9 +117,14 @@ const Register = () => {
         </Box>
       </Flex>
 
+      <Flex gap={5} justifyContent={"center"} marginTop={1}>
+        <Text fontWeight={"bold"}>Já tem uma conta?</Text>
+        <Text color={"rgba(1, 137, 183)"} fontWeight={"bold"} position={"relative"} onClick={()=> {handlogin()}}>Fazer login</Text>
+      </Flex>
+
       <Flex justifyContent={"center"}>
         <CustomButton
-          marginTop={2}
+          marginTop={6}
           width={"30%"}
           backgroundColor={"rgba(1, 137, 183)"}
           label="Confirmar"
@@ -106,10 +132,6 @@ const Register = () => {
         />
       </Flex>
 
-      <Flex gap={5} justifyContent={"center"} marginTop={1}>
-        <Text>Já tem uma conta?</Text>
-        <Text color={"rgba(1, 137, 183)"}>Fazer login</Text>
-      </Flex>
     </Box>
   );
 };
