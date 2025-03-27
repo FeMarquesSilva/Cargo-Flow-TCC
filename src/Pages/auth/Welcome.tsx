@@ -15,7 +15,7 @@ const cardInfo: React.CSSProperties = {
   backgroundColor: "rgba(199, 199, 199, 0.8)",
   borderRadius: "15px",
   padding: "30px",
-  boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)"
+  boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
 };
 
 const buttons: React.CSSProperties = {
@@ -27,7 +27,6 @@ const Welcome = () => {
 
   return (
     <Box>
-
       <Box
         position={"absolute"}
         bgImage={`url(${ImagemDeFundo})`}
@@ -38,6 +37,7 @@ const Welcome = () => {
         width={"100%"}
         opacity={"26%"}
       />
+
       <Flex justifyContent={"center"}>
         <Image src={Logo} width={"300px"} />
       </Flex>
@@ -46,7 +46,13 @@ const Welcome = () => {
         Gerencie sua transportadora de forma eficiente e profissional
       </Text>
 
-      <Flex flexDir={"row"} gap={"5"} marginTop={25} margin={"20px"} position={"relative"}>
+      <Flex
+        flexDir={"row"}
+        gap={"5"}
+        marginTop={25}
+        margin={"20px"}
+        position={"relative"}
+      >
         {/* Componente informativo da Gestão de Cargas */}
         <Box style={cardInfo}>
           <Image src={IconeCarga} boxSize={"80px"} />

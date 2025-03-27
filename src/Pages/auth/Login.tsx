@@ -18,6 +18,10 @@ const Login = () => {
     navegate("/Register");
   };
 
+  const handHome = () => {
+    navegate("/Home");
+  }
+
   return (
     <Box>
       <Box
@@ -71,6 +75,7 @@ const Login = () => {
           width={"450px"}
           borderRadius={"15px"}
           backgroundColor={"rgba(1, 137, 183)"}
+          onClick={() => {handHome()}}
         />
 
         <Flex marginTop={5} flexDir={"row"} gap={5}>
