@@ -8,6 +8,7 @@ import CustomButton from "../../components/button";
 const inputs: React.CSSProperties = {
   backgroundColor: "white",
   borderRadius: "15px",
+  boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)"
 };
 
 const Login = () => {
@@ -42,6 +43,7 @@ const Login = () => {
       <Flex justifyContent={"center"} flexDir={"column"} alignItems={"center"}>
         <Box
           backgroundColor={"rgba(199, 199, 199, 0.8)"}
+          boxShadow={"5px 5px 15px rgba(0, 0, 0, 0.3)"}
           borderRadius={25}
           position={"relative"}
           padding={"20px"}

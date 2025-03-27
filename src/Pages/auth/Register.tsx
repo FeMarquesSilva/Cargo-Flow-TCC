@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ImagemDeFundo from "../../imgs/background/auth.png";
 import CustomButton from "../../components/button";
 import buttonReturn from "../../imgs/icons/voltar.png";
+import Logo from "../../imgs/logo.png";
 
 const inputs: React.CSSProperties = {
   borderRadius: "15px",
@@ -13,33 +14,25 @@ const inputs: React.CSSProperties = {
   boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
 };
 
-const textInfoInput: React.CSSProperties = {
-  fontSize: "17px",
-  font: "Arial",
-  fontWeight: "bold",
-  color: "rgb(94, 91, 91)",
-};
-
 const Register = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-    const handlogin = () => {
-      navigate("/login")
-    }
+  const handlogin = () => {
+    navigate("/login");
+  };
 
   return (
     <Box>
-        <Box
-        position={"absolute"}
+      <Box
+        position={"fixed"}
         bgImage={`url(${ImagemDeFundo})`}
         bgSize={"cover"}
         backgroundPosition={"center"}
         bgRepeat={"no-repeat"}
-        opacity={"26%"}
+        opacity={"40%"}
         height={"100vh"}
         width={"100%"}
-        />
+      />
 
       <Image
         src={buttonReturn}
@@ -47,7 +40,7 @@ const Register = () => {
         onClick={() => navigate("/")}
         width={"50px"}
         padding={2}
-        position={"relative"}
+        position={"fixed"}
       />
 
       <Flex flexDir={"column"} textAlign={"center"}>
@@ -59,7 +52,7 @@ const Register = () => {
         </Text>
       </Flex>
 
-      <Flex justifyContent={"center"} alignItems={"center"} >
+      <Flex justifyContent={"center"} alignItems={"center"} flexDir={"column"}>
         <Box
           position={"relative"}
           backgroundColor={"rgba(199, 199, 199, 0.8)"}
@@ -68,9 +61,13 @@ const Register = () => {
           borderRadius={25}
           boxShadow={"5px 5px 15px rgba(0, 0, 0, 0.3)"}
         >
+          <Flex justifyContent={"center"}>
+            <Image src={Logo} width={"300px"} />
+          </Flex>
+
           <Flex flexDir={"column"} gap={8}>
             <Box>
-              <Text style={textInfoInput}>Nome da Empresa</Text>
+              <Text>Nome da Empresa</Text>
               <Input
                 style={inputs}
                 type={"text"}
@@ -79,7 +76,7 @@ const Register = () => {
             </Box>
 
             <Box>
-              <Text style={textInfoInput}>CNPJ</Text>
+              <Text>CNPJ</Text>
               <Input
                 style={inputs}
                 type={"number"}
@@ -88,7 +85,7 @@ const Register = () => {
             </Box>
 
             <Box>
-              <Text style={textInfoInput}>E-mail</Text>
+              <Text>E-mail</Text>
               <Input
                 style={inputs}
                 type={"email"}
@@ -97,7 +94,7 @@ const Register = () => {
             </Box>
 
             <Box>
-              <Text style={textInfoInput}>Senha</Text>
+              <Text>Senha</Text>
               <Input
                 style={inputs}
                 type={"password"}
@@ -106,7 +103,7 @@ const Register = () => {
             </Box>
 
             <Box>
-              <Text style={textInfoInput}>Confirmar senha</Text>
+              <Text>Confirmar senha</Text>
               <Input
                 style={inputs}
                 type={"password"}
@@ -115,23 +112,41 @@ const Register = () => {
             </Box>
           </Flex>
         </Box>
-      </Flex>
 
-      <Flex gap={5} justifyContent={"center"} marginTop={1}>
-        <Text fontWeight={"bold"}>Já tem uma conta?</Text>
-        <Text color={"rgba(1, 137, 183)"} fontWeight={"bold"} position={"relative"} onClick={()=> {handlogin()}}>Fazer login</Text>
-      </Flex>
+        <Flex justifyContent={"center"}>
+          <CustomButton
+            marginTop={2}
+            width={"450px"}
+            backgroundColor={"rgba(1, 137, 183)"}
+            label="Confirmar"
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+        </Flex>
 
-      <Flex justifyContent={"center"}>
-        <CustomButton
-          marginTop={6}
-          width={"30%"}
-          backgroundColor={"rgba(1, 137, 183)"}
-          label="Confirmar"
-          onClick={()=> {navigate("/")}}
-        />
+        <Flex
+          marginBottom={10}
+          gap={5}
+          justifyContent={"center"}
+          marginTop={2}
+          backgroundColor={"white"}
+          position={"relative"}
+          borderRadius={15}
+          padding={1}
+        >
+          <Text>Já tem uma conta?</Text>
+          <Text
+            color={"rgba(1, 137, 183)"}
+            position={"relative"}
+            onClick={() => {
+              handlogin();
+            }}
+          >
+            Fazer login
+          </Text>
+        </Flex>
       </Flex>
-
     </Box>
   );
 };
