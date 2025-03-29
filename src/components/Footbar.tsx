@@ -1,62 +1,76 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import IconHome from "../imgs/icons/footnav/home.png"
-import IconDashboard from "../imgs/icons/footnav/dashboard.png"
-import IconCarga from "../imgs/icons/footnav/cargas.png"
-import IconMotoristas from "../imgs/icons/footnav/motoristas.png"
-import IconRelatorios from "../imgs/icons/footnav/relatórios.png"
+import IconHome from "../imgs/icons/footnav/home.png";
+import IconDashboard from "../imgs/icons/footnav/dashboard.png";
+import IconCarga from "../imgs/icons/footnav/cargas.png";
+import IconMotoristas from "../imgs/icons/footnav/motoristas.png";
+import IconRelatorios from "../imgs/icons/footnav/relatórios.png";
+import { useNavigate } from "react-router-dom";
+
+const cardsSettings: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "white",
+  fontWeight: "bold"
+}
+
+const sizeItens: React.CSSProperties = {
+  width: "30%"
+}
 
 const Footbar = () => {
+
+  const navigate = useNavigate();
+
   return (
     <Box>
       <Flex
-       backgroundColor={"rgb(180, 180, 180)"}
-        justifyContent={"center"}
+        backgroundColor={"rgb(180, 180, 180)"}
+        justifyContent={"space-between"}
         flexDir={"row"}
-        gap={"15%"}
         as={"footer"}
         position={"fixed"}
         bottom={0}
         left={0}
         width={"100%"}
         textAlign={"center"}
-
       >
-        <Box alignItems={"center"}>
+        <Box style={cardsSettings} onClick={() => { navigate("/home") }}>
           <Image
             src={IconHome}
-            width={"70%"}
+            style={sizeItens}
           />
-          <Text>Home</Text>
+          <Text bottom={0} left={0}>Home</Text>
         </Box>
 
-        <Box>
+        <Box style={cardsSettings}>
           <Image
             src={IconDashboard}
-            width={"70%"}
+            style={sizeItens}
           />
           <Text>Dashboard</Text>
         </Box>
 
-        <Box>
+        <Box style={cardsSettings} onClick={() => { navigate("/load") }}>
           <Image
             src={IconCarga}
-            width={"70%"}
+            style={sizeItens}
           />
           <Text>Cargas</Text>
         </Box>
 
-        <Box>
+        <Box style={cardsSettings}>
           <Image
             src={IconMotoristas}
-            width={"70%"}
+            style={sizeItens}
           />
           <Text>Motoristas</Text>
         </Box>
 
-        <Box>
+        <Box style={cardsSettings}>
           <Image
             src={IconRelatorios}
-            width={"70%"}
+            style={sizeItens}
           />
           <Text>Relatórios</Text>
         </Box>

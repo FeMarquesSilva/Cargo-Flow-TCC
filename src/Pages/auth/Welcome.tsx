@@ -28,8 +28,8 @@ const Welcome = () => {
   return (
     <Box>
       <Box
-        position={"absolute"}
         bgImage={`url(${ImagemDeFundo})`}
+        position={"absolute"}
         bgSize={"cover"}
         backgroundPosition={"center"}
         bgRepeat={"no-repeat"}
