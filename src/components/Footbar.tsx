@@ -11,11 +11,12 @@ const cardsSettings: React.CSSProperties = {
   flexDirection: "column",
   alignItems: "center",
   color: "white",
-  fontWeight: "bold"
+  fontWeight: "bold",
+  fontSize: "20px"
 }
 
 const sizeItens: React.CSSProperties = {
-  width: "30%"
+  width: "20%"
 }
 
 const Footbar = () => {
@@ -35,7 +36,7 @@ const Footbar = () => {
         width={"100%"}
         textAlign={"center"}
       >
-        <Box style={cardsSettings} onClick={() => { navigate("/home") }}>
+        <Box style={cardsSettings} onClick={() => { navigate("/home", { replace: true }) }}>
           <Image
             src={IconHome}
             style={sizeItens}
@@ -51,7 +52,7 @@ const Footbar = () => {
           <Text>Dashboard</Text>
         </Box>
 
-        <Box style={cardsSettings} onClick={() => { navigate("/load") }}>
+        <Box style={cardsSettings} onClick={() => { navigate("/load", { replace: true }) }}>
           <Image
             src={IconCarga}
             style={sizeItens}

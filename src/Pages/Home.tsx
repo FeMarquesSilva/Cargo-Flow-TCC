@@ -8,7 +8,8 @@ const styleCard: React.CSSProperties = {
     position: "relative",
     width: "100%",
     padding: "30px",
-    borderRadius: "15px"
+    borderRadius: "15px",
+    boxShadow: "5px 5px 5px rgb(185, 185, 185)"
 }
 
 const Home = () => {
@@ -38,7 +39,7 @@ const Home = () => {
 
             {/* Componente dos recursos principais */}
 
-            <Text marginTop={"200px"} marginBottom={"25px"}>Recursos Principais</Text>
+            <Text marginTop={"200px"} marginBottom={"25px"} marginLeft={"15px"} fontWeight={"bold"}>Recursos Principais</Text>
 
             <Grid templateColumns={"repeat(3, 1fr)"} gap={4} p={5} justifyItems={"center"}>
 

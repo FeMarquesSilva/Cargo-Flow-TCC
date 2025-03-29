@@ -12,10 +12,12 @@ const cardInfo: React.CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   textAlign: "center",
-  backgroundColor: "rgba(199, 199, 199, 0.8)",
+  backgroundColor: "white",
   borderRadius: "15px",
   padding: "30px",
   boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
+  position: "relative",
+  zIndex: "1"
 };
 
 const buttons: React.CSSProperties = {
@@ -28,44 +30,56 @@ const Welcome = () => {
   return (
     <Box>
       <Box
-        bgImage={`url(${ImagemDeFundo})`}
-        position={"absolute"}
-        bgSize={"cover"}
-        backgroundPosition={"center"}
-        bgRepeat={"no-repeat"}
-        height={"100vh"}
-        width={"100%"}
-        opacity={"26%"}
+        position="fixed"
+        width="100%"
+        height="110vh"
+        bg="rgba(0, 0, 0, 0.5)" // Ajuste a transparência aqui
+        marginTop={-10}
+        zIndex={1} // Garante que a camada escura fique sobre a imagem de fundo
       />
 
-      <Flex justifyContent={"center"}>
-        <Image src={Logo} width={"300px"} />
-      </Flex>
+      <Box
+        bgImage={`url(${ImagemDeFundo})`}
+        position="fixed"
+        bgSize="cover"
+        backgroundPosition="center"
+        bgRepeat="no-repeat"
+        height="110vh"
+        width="100%"
+        opacity="40%"
+        zIndex={0}
+        marginTop={-10}
+      />
 
-      <Text textAlign={"center"} fontSize={20}>
-        Gerencie sua transportadora de forma eficiente e profissional
-      </Text>
+      <Flex marginBottom={"40px"} justifyContent={"center"} alignItems={"center"} zIndex={1} flexDir={"column"}>
+        <Box zIndex={1} >
+          <Image src={Logo} width={"400px"} zIndex={1} />
+        </Box>
+        <Box zIndex={1}>
+          <Text textAlign={"center"} fontSize={20} color={"white"}>
+            Gerencie sua transportadora de forma eficiente e profissional
+          </Text>
+        </Box>
+      </Flex>
 
       <Flex
         flexDir={"row"}
         gap={"5"}
-        marginTop={25}
-        margin={"20px"}
+        margin={"25px"}
         position={"relative"}
       >
         {/* Componente informativo da Gestão de Cargas */}
         <Box style={cardInfo}>
-          <Image src={IconeCarga} boxSize={"80px"} />
+          <Image src={IconeCarga} boxSize={"100px"} />
           <Text fontSize={24}>Gestão de Cargas</Text>
           <Text>
-            Organize sua cargas de forma prática, facilitando o gerenciamento de
-            fretes terceirizados.
+            Organize sua cargas de forma prática, facilitando o gerenciamento de fretes terceirizados.
           </Text>
         </Box>
 
         {/* Componente informativo de Motoristas */}
         <Box style={cardInfo}>
-          <Image src={IconeMotorista} boxSize={"80px"} />
+          <Image src={IconeMotorista} boxSize={"100px"} />
           <Text fontSize={24}>Motoristas</Text>
           <Text>
             Controle e visualize os motoristas cadastrados, com informações
@@ -75,7 +89,7 @@ const Welcome = () => {
 
         {/* Componente informativo de Relatórios */}
         <Box style={cardInfo}>
-          <Image src={IconeRelatorio} boxSize={"80px"} />
+          <Image src={IconeRelatorio} boxSize={"100px"} />
           <Text fontSize={24}>Relatórios</Text>
           <Text>
             Acesse dados detalhados sobre cargas, fretes e motoristas para uma
@@ -84,8 +98,8 @@ const Welcome = () => {
         </Box>
       </Flex>
 
-      <Flex justifyContent={"center"}>
-        <Flex flexDir={"column"} gap={2} boxSize={"30%"} marginTop={"3%"}>
+      <Flex justifyContent={"center"} >
+        <Flex flexDir={"column"} gap={2} boxSize={"30%"} marginTop={"3%"} zIndex={1}>
           <Button
             style={buttons}
             bgColor={"#0066CC"}
