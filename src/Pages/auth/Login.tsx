@@ -34,7 +34,7 @@ const Login = () => {
       />
 
       <Box
-        position={"absolute"}
+        position={"fixed"}
         bgImage={`url(${ImagemDeFundo})`}
         bgSize={"cover"}
         backgroundPosition={"center"}
@@ -51,7 +51,7 @@ const Login = () => {
         onClick={() => navegate("/")}
         width={"50px"}
         padding={2}
-        position={"relative"}
+        position={"fixed"}
         zIndex={1}
       />
 
@@ -65,10 +65,14 @@ const Login = () => {
           width={"480px"}
           justifyItems={"center"}
           zIndex={1}
+          marginTop={"50px"}
         >
-          <Image src={Logo} marginBottom={"10px"} width={350} />
-          <Text color={"white"} fontWeight={"bold"} fontSize={"24px"} marginBottom={"25px"}>Bem Vindo ao Cargo Flow!</Text>
-          <Text color={"white"} fontWeight={"bold"} marginBottom={"10px"}>Preencha os campos abaixo para entrar</Text>
+
+          <Flex flexDir={"column"} alignItems={"center"}>
+            <Image src={Logo} marginBottom={"10px"} width={350} />
+            <Text color={"white"} fontWeight={"bold"} fontSize={"24px"} marginBottom={"25px"}>Bem Vindo ao Cargo Flow!</Text>
+            <Text color={"white"} fontWeight={"bold"} marginBottom={"10px"}>Preencha os campos abaixo para entrar</Text>
+          </Flex>
           <Flex justifySelf={"start"} width={"100%"} flexDir={"column"} gap={5}>
 
             <Box>
@@ -99,7 +103,6 @@ const Login = () => {
         <Flex marginTop={5} flexDir={"row"} gap={5}>
           <Flex
             position={"relative"}
-            backgroundColor={"rgba(68, 68, 68, 0.8)"}
             borderRadius={15}
             padding={0.5}
             zIndex={1}
